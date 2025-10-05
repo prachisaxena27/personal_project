@@ -299,6 +299,8 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
               
                <h1> Aditya Jain & Ankita Jain </h1>
 
+               
+
                <div className='hero_img'>
 
                
