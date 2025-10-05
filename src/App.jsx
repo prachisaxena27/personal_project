@@ -1,7 +1,7 @@
 import { React, useEffect, useRef, useState } from 'react'
 import mySong from "./assets/audio/instrumental.mp3"
 import musicIcon from "./assets/pics/music.png"
-import Haldi from "./assets/pics/Haldi.jpeg"
+// import Haldi from "./assets/pics/Haldi.jpeg"
 import Our_Pic from "./assets/pics/Our_Pic.jpg"
 import confetti from "canvas-confetti"
 
@@ -52,62 +52,37 @@ const App = () => {
   const trackRef = useRef(null);
 
   // Scroll to a particular image index
-  const scrollToIndex = (index) => {
-    const track = trackRef.current;
-    if (!track) return;
+  // Scroll to a particular image index
+const scrollToIndex = (index) => {
+  const track = trackRef.current;
+  if (!track) return;
 
-    const images = track.querySelectorAll("img");
-    if (!images.length) return;
+  const images = track.querySelectorAll("img");
+  if (!images.length) return;
 
-    if (index < 0) index = 0;
-    if (index >= images.length) index = images.length - 1;
-    setCurrentIndex(index);
+  // limit index
+  const newIndex = Math.max(0, Math.min(index, images.length - 1));
+  setCurrentIndex(newIndex);
 
-    const img = images[index];
-    const imgCenter = img.offsetLeft + img.offsetWidth / 2;
-    const trackCenter = track.clientWidth / 2;
+  const img = images[newIndex];
+  const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+  const trackCenter = track.clientWidth / 2;
 
-    track.scrollTo({
-      left: imgCenter - trackCenter,
-      behavior: "smooth",
-    });
+  track.scrollTo({
+    left: Math.max(0, imgCenter - trackCenter - 40),
+    behavior: "smooth",  // ✅ smooth scroll
+  });
 
-    // Update arrow visibility
-    setLeftArrow(index > 0);
-    setRightArrow(index < images.length - 1);
-  };
+  setLeftArrow(newIndex > 0);
+  setRightArrow(newIndex < images.length - 1);
+};
 
-  // On mount → scroll to first image center
-  useEffect(() => {
-    if (trackRef.current) {
-      scrollToIndex(0);
-    }
-    // eslint-disable-next-line
-  }, []);
+// arrow click
+const handleLeft = () => scrollToIndex(currentIndex - 1);
+const handleRight = () => scrollToIndex(currentIndex + 1);
 
-  // const scrollLeft = () => {
-  //   const newIndex = currentIndex - 1;
-  //   setCurrentIndex(newIndex);
-  //   setrightarrow(true);
-  //   trackRef.current.scrollLeft -= 300; // kitna slide karna hai
 
-  //   if(newIndex == 0)
-  //   {
-  //     setleftarrow(false);
-  //   }
-  // };
-
-  // const scrollRight = () => {
-  //   const newIndex = currentIndex + 1;
-  //   setCurrentIndex(newIndex);
-  //   setleftarrow(true);
-  //   trackRef.current.scrollLeft += 300;
-
-  //   if(newIndex == lastIndex)
-  //   {
-  //     setrightarrow(false);
-  //   }
-  // };
+ 
 
 
   const [isPlaying, setIsPlaying]=useState(false)
@@ -266,7 +241,7 @@ const App = () => {
         
 
 
-          {/* <div className="ani"> */}
+        
 
 
 
@@ -336,25 +311,20 @@ const App = () => {
 
             </section>
             
-            <img className='linebreak' src="https://png.pngtree.com/element_our/20190530/ourmid/pngtree-5-golden-stars-and-straight-lines-image_1263119.jpg" alt="" />
+
+
+<svg class="doodle-svg" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
+  <path d="M5 15 Q50 5, 100 15 T195 15 T295 15 T395 15" 
+        stroke="#bba2f7" stroke-width="3" fill="transparent" stroke-linecap="round"/>
+</svg>
+
 
             <section id='story'>
                <div className='story_con'>
 
-                { /*<h1> Our Story </h1>
-                <span> <img src={Haldi} alt="Our Pic" height={400} width={400} /> </span>
-                <span> 
-                  <p> Amidst all the chaos and hustle, my heart found its forever 💕 </p>
-
-                     <p> Before we fell in love, we fell into endless brainstorming sessions, case studies, and problem-solving marathons. Somewhere between product roadmaps and late-night debates, we discovered the best idea we’d ever co-create — US❣️ </p>
-
-                     <p> We are getting married on December 2nd, 2025! </p>
-                     <p> So block your calendars and get ready for a day full of love, laughter, and dance floors on fire. 💃🕺</p>
-
-
-                      <p> #AAstreaming_forever </p>
-                </span>
-              </div> */}
+                {/* <h1> Our Story </h1> */}
+                
+                
 
               
   {/* <!-- Row 1 --> */}
@@ -403,7 +373,17 @@ const App = () => {
 
             
 
-            <img className='linebreak' src="https://png.pngtree.com/element_our/20190530/ourmid/pngtree-5-golden-stars-and-straight-lines-image_1263119.jpg" alt="" />
+   <div class="doodle-wrap">
+  <svg class="doodle-svg" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 15 Q50 5, 100 15 T195 15 T295 15 T395 15"
+          stroke="#b96ebf"
+          stroke-width="3"
+          fill="transparent"
+          stroke-linecap="round"/>
+  </svg>
+  <span class="sparkle sparkle-left">✦</span>
+  <span class="sparkle sparkle-right">✦</span>
+</div>
 
             <section id='events'>
 
@@ -411,39 +391,13 @@ const App = () => {
 
                 <h1> Events </h1>
 
-                {/* <div className="events_gal">
-
-                  
-
-                <img src={Haldi} alt="Image loading..." height={400} width={360} />
-                <img src={Haldi} alt="Image loading..." height={400} width={360} />
-                <img src={Haldi} alt="Image loading..." height={400} width={360} />
-                <img src={Haldi} alt="Image loading..." height={400} width={360} />
-              </div> */}
-{/* 
-              <div class="events-equal">
-  <div class="row row--top">
-    <div class="event e1">
-                  <img src={Haldi} alt="" height={400} width={360} /> </div>
-  </div>
-
-  <div class="row row--middle">
-    <div class="event e2">
-      <img src={Haldi} alt="" height={400} width={360} /></div>
-    <div class="event e3"> <img src={Haldi} alt="" height={400} width={360} /> </div>
-    <div class="event e4"><img src={Haldi} alt="" height={400} width={360} /> </div>
-  </div>
-
-  <div class="row row--bottom">
-    <div class="event e5"> <img src={Haldi} alt="" height={400} width={360} /></div>
-  </div> */}
- {/* </div> */}
+           
 
 <div className="events-grid">
   
   <div className="event-card">
     <div className="event-img">
-      <img src="haldi.jpg" alt=""/>
+      <img src="https://www.shutterstock.com/image-illustration/haldi-couples-wedding-goal-ceremony-260nw-2349308419.jpg" alt=""/>
     </div>
     <p className="event-name">Haldi</p>
     <div className="extra"><p>“Haldi ki roshni, khushiyon ki kahani ✨”</p></div>
@@ -452,7 +406,7 @@ const App = () => {
 
   <div className="event-card">
     <div className="event-img">
-      <img src={Haldi} alt=""/>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT438N6ThcITa6chh4HwcR100AoPkDpN5Drdw&s" alt=""/>
     </div>
     <p className="event-name">Mehendi</p>
     <div className="extra"><p>“Mehendi ke rang, pyaar ke sang 💚”</p></div>
@@ -462,7 +416,7 @@ const App = () => {
   <div className="event-card">
     <div className='event-card-wedding'>
     <div className="event-img1">
-      <img src={Our_Pic} alt=""/>
+      <img src="https://static.vecteezy.com/system/resources/previews/055/004/590/non_2x/indian-wedding-icon-illustration-free-vector.jpg" alt=""/>
     </div>
     <p className="event-name">Wedding</p>
     <div className="extra"><p>“Shaadi ki shaan, dosti aur armaan 💍”</p></div>
@@ -472,7 +426,7 @@ const App = () => {
   
   <div className="event-card">
     <div className="event-img">
-      <img src="sangeet.jpg" alt=""/>
+      <img src="https://thumbs.dreamstime.com/b/bride-groom-indian-traditional-wedding-attire-323874213.jpg" alt=""/>
     </div>
     <p className="event-name">Sangeet</p>
     <div className="extra"><p>“Nach gaana, dil se jamaana 🎶”</p></div>
@@ -481,7 +435,7 @@ const App = () => {
   
   <div className="event-card">
     <div className="event-img">
-      <img src="reception.jpg" alt=""/>
+      <img src="https://cdn4.vectorstock.com/i/1000x1000/80/08/wedding-reception-rgb-color-icon-vector-35758008.jpg" alt=""/>
     </div>
     <p className="event-name">Reception</p>
     <div className="extra"><p>“Nayi shuruat, pyar ki baat 🌸”</p></div>
@@ -494,7 +448,17 @@ const App = () => {
 
             </section>
 
-            <img className='linebreak' src="https://png.pngtree.com/element_our/20190530/ourmid/pngtree-5-golden-stars-and-straight-lines-image_1263119.jpg" alt="" />
+    <div class="doodle-wrap">
+  <svg class="doodle-svg" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 15 Q50 5, 100 15 T195 15 T295 15 T395 15"
+          stroke="#b96ebf"
+          stroke-width="3"
+          fill="transparent"
+          stroke-linecap="round"/>
+  </svg>
+  <span class="sparkle sparkle-left">✦</span>
+  <span class="sparkle sparkle-right">✦</span>
+</div>
 
             <section id='gallery'>
 
@@ -508,15 +472,15 @@ const App = () => {
 
       {/* Left Arrow */}
 
-      {leftArrow &&
-      <button className="arrow left" onClick={() => scrollToIndex(currentIndex - 1)} 
+      
+      <button className="arrow left" onClick={handleLeft}
       style={{
           left: 10,
           opacity: leftArrow ? 1 : 0,
           pointerEvents: leftArrow ? "auto" : "none",
         }}>
         <img src="https://cdn-icons-png.freepik.com/512/271/271220.png" alt="" height={50} />
-      </button> }
+      </button> 
 
       {/* Track */}
       <div className="carousel-track" ref={trackRef} id='carouselTrack'
@@ -528,29 +492,39 @@ const App = () => {
           gap: "16px",
           scrollBehavior: "smooth",
         }}>
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src="https://www.shutterstock.com/image-illustration/haldi-couples-wedding-goal-ceremony-260nw-2349308419.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT438N6ThcITa6chh4HwcR100AoPkDpN5Drdw&s" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src="https://thumbs.dreamstime.com/b/bride-groom-indian-traditional-wedding-attire-323874213.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src="https://static.vecteezy.com/system/resources/previews/055/004/590/non_2x/indian-wedding-icon-illustration-free-vector.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      <img src="https://cdn4.vectorstock.com/i/1000x1000/80/08/wedding-reception-rgb-color-icon-vector-35758008.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      
       </div>
 
       {/* Right Arrow */}
-      {rightArrow && <button className="arrow right" onClick={() => scrollToIndex(currentIndex + 1)}
+      <button className="arrow right" onClick={handleRight}
          style={{
           right: 10,
           opacity: rightArrow ? 1 : 0.5,
           pointerEvents: rightArrow ? "auto" : "none",
         }}>
         <img src="https://cdn-icons-png.flaticon.com/512/32/32213.png" alt="" height={50} />
-      </button> }
+      </button> 
     </div>
     </div>
 
             </section>
 
-            <img className='linebreak' src="https://png.pngtree.com/element_our/20190530/ourmid/pngtree-5-golden-stars-and-straight-lines-image_1263119.jpg" alt="" />
+    <div class="doodle-wrap">
+  <svg class="doodle-svg" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 15 Q50 5, 100 15 T195 15 T295 15 T395 15"
+          stroke="#b96ebf"
+          stroke-width="3"
+          fill="transparent"
+          stroke-linecap="round"/>
+  </svg>
+  <span class="sparkle sparkle-left">✦</span>
+  <span class="sparkle sparkle-right">✦</span>
+</div>
 
             <section id='rsvp'>
 
@@ -647,15 +621,33 @@ const App = () => {
         </div>
       )}
 
-            <img className='linebreak' src="https://png.pngtree.com/element_our/20190530/ourmid/pngtree-5-golden-stars-and-straight-lines-image_1263119.jpg" alt="" />
+
+
+
+<div class="doodle-wrap">
+  <svg class="doodle-svg" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 15 Q50 5, 100 15 T195 15 T295 15 T395 15"
+          stroke="#b96ebf"
+          stroke-width="3"
+          fill="transparent"
+          stroke-linecap="round"/>
+  </svg>
+  <span class="sparkle sparkle-left">✦</span>
+  <span class="sparkle sparkle-right">✦</span>
+</div>
+
+
+
+
+
 
             <section>
 
               <div className='footer'>
 
-                <p>
-                  Footer
-                </p>
+                <h2>
+                  Together is our favorite place to be... forever.
+                </h2>
 
                 <a href="#home"> <img src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/up-arrow-icon.png" alt="" height={30} /> </a>
 

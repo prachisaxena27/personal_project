@@ -1,6 +1,21 @@
 /* ================== GLOBAL / RESET ================== */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:wght@400;600&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Sacramento&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+
 *{ margin:0; padding:0; box-sizing:border-box; }
 
 :root{
@@ -13,22 +28,41 @@
 html{
   scroll-behavior: smooth;
   min-height: 100%;
-  background: linear-gradient(to bottom, #fbc2eb, #a6c1ee, #e0c3fc);
+  /* background: linear-gradient(to bottom, #e0c3fc , #c2e9fb , #a1c4fd); */
+  background: linear-gradient(to bottom, #fbc2eb, #a6c1ee, #e0c3fc);  
+  /* background: linear-gradient(to bottom, #ffecd2,  #fcb69f); */
+  /* background: linear-gradient(to bottom, #f6d365 , #fda085); */
+  /* background: linear-gradient(to bottom, #e0c3fc, #8ec5fc); */
+  /* background: linear-gradient(to bottom, #ffdde1 , #ee9ca7); */
+  /* background: linear-gradient(to bottom, #f6d365, #fda085); */
+  /* background: linear-gradient(to bottom, #cfd9df, #e2ebf0); */
+
 }
 body{
   min-height: 100vh;
   overflow-x: hidden;
+  /* font-family: 'Playfair Display', sans-serif; */
+  /* font-family: 'Nunito Sans', sans-serif; */
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Quicksand', sans-serif; */
   font-family: 'Poppins', sans-serif;
+  /* font-family: 'Josefin Sans', sans-serif; */
 }
 
 h1,h2,h3{
   padding-bottom: 10px;
   text-align: center;
   font-family: 'Dancing Script', cursive;
+  /* font-family: 'Playfair Display', cursive; */
+  /* font-family: 'Sacramento', cursive; */
+  /* font-family: 'Great Vibes', cursive; */
+  /* font-family: 'Cormorant Garamond', cursive; */
   padding-inline: var(--gutter);
 }
 
 /* ================== FLOATERS / DECOR ================== */
+
+
 .petal, .heart{
   position: fixed;
   top: -10px;
@@ -67,13 +101,14 @@ h1,h2,h3{
   justify-content: flex-start;     /* p left side pe rahe */
   gap: clamp(24px, 10vw, 150px);   /* tumhara existing gap */
   width: 100%;
-  min-height: 80px;                /* nav center align ke liye thoda height */
+  min-height: 50px;                /* nav center align ke liye thoda height */
 }
 
 /* left side ka text (brand/class) */
 .hsthg p{
   margin: 0;
   white-space: nowrap;             /* wrap na ho to left me hi rahe */
+  
 }
 
 /* nav links ko EXACT center me pin karo */
@@ -99,15 +134,15 @@ h1,h2,h3{
 }
 
 /* 📱 Mobile pe stack kara do: brand upar, nav neeche center me */
-@media (max-width: 640px){
+/* @media (max-width: 640px){
   .hsthg{
     min-height: unset;
     padding-bottom: 8px;
-    /* flex-direction: column; */
-    /* align-items: center;           */
-     /* brand bhi center ho jayega (mobile me better) */
-    /* gap: 8px; */
-    /* min-height: unset; */
+    flex-direction: column; 
+    align-items: center;          
+     brand bhi center ho jayega (mobile me better)
+    gap: 8px;
+     min-height: unset; 
   }
   .navbar{
     position: static;
@@ -115,24 +150,102 @@ h1,h2,h3{
     width: 100%;
     justify-content: center;
   }
+} */
+
+/* 📱 Force-center navbar on phones */
+@media (max-width: 640px){
+  .hsthg{
+    flex-direction: column;
+    align-items: center;     /* brand + nav dono center */
+    gap: 8px;
+    min-height: unset;
+  }
+
+  .navbar{
+    position: static;        /* absolute hataya */
+    transform: none;
+    width: 100%;
+    margin-inline: auto;     /* container ko center karo */
+    display: flex;
+    justify-content: center; /* ✅ items center */
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    text-align: center;      /* safety */
+  }
+
+  .navbar a{
+    flex: 0 0 auto;          /* items shrink/expand na karein */
+    display: inline-block;   /* text-align center respect kare */
+  }
 }
+
+
 /* ================== SECTION DIVIDER LINE ================== */
-.linebreak{
-  width: 100%; height: 8px;
-  padding-bottom: clamp(16px, 5vw, 35px);
-  animation: glowy 1s ease-in-out infinite alternate;
-  box-shadow: 0 5px 0 #00aaff, 0 10px 0 #00aaff, 0 15px 0 #00aaff, 0 20px 0 #00aaff;
+
+
+.doodle-wrap {
+  position: relative;
+  width: 80%;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@keyframes glowy{
-  0%{ box-shadow: 0 2px 0 gold, 0 2px 0 goldenrod, 0 2px 0 gold; }
-  100%{ box-shadow: 0 5px 0 gold, 0 5px 0 gold, 0 5px 0 gold; }
+
+/* Soft magenta curvy doodle line */
+.doodle-svg {
+  width: 100%;
+  display: block;
+  animation: shimmer 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px #e0b4f2)
+          drop-shadow(0 0 16px #b96ebf)
+          drop-shadow(0 0 24px #d8a3f7);
+
+
+background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 60%);}
+
+
+/* line glow pulse */
+@keyframes shimmer {
+  0%   { opacity: 0.85; filter: drop-shadow(0 0 6px #e0b4f2) drop-shadow(0 0 12px #b96ebf); }
+  50%  { opacity: 1;   filter: drop-shadow(0 0 12px #e0b4f2) drop-shadow(0 0 28px #b96ebf) drop-shadow(0 0 40px #d8a3f7); }
+  100% { opacity: 0.85; filter: drop-shadow(0 0 6px #e0b4f2) drop-shadow(0 0 12px #b96ebf); }
 }
+
+/* ✦ sparkles (enhanced glow and pulse) */
+.sparkle {
+  position: absolute;
+   /* transform: translateY(1px); */
+  font-size: 22px;
+  color: #fff; /* white sparkle for highlight */
+  text-shadow:
+    0 0 8px #e0b4f2,
+    0 0 15px #b96ebf,
+    0 0 25px #d8a3f7,
+    0 0 35px #b96ebf,
+    0 0 45px #e0b4f2;
+  animation: twinkle 3s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+.sparkle-left  { left: -17px;     animation-delay: 0.4s; }
+.sparkle-right { right: -17px;  animation-delay: 2.2s; }
+
+/* sparkle breathing animation */
+@keyframes twinkle {
+  0%   { opacity: 0.7; transform: scale(0.9) rotate(0deg); }
+  50%  { opacity: 1;   transform: scale(1.25) rotate(8deg); text-shadow: 0 0 25px #fff, 0 0 45px #d8a3f7, 0 0 60px #b96ebf; }
+  100% { opacity: 0.8; transform: scale(0.95) rotate(-8deg); }
+}
+
+
 
 /* ================== HERO ================== */
 
 @media (min-width: 641px) {
   .hero_con{
-    padding-top: 12px;
+    padding-top: 40px;
   }
 }
 .hero_con{
@@ -146,13 +259,23 @@ h1,h2,h3{
 
 .hero_img{ width: 100%; }
 .hero_img img{
-  width: 100%; height: auto; max-height: 80vh;
+  width: 100%; height: auto; max-height: 150vh;
   display: block;
-  object-fit: cover; padding-bottom: 40px;
+  object-fit: auto; 
+  /* object-position: center; */
+  padding-bottom: 40px;
 }
+
+.hero_img img{ display:block; }
+
 @media (max-width: 768px){
   .hero_img img{ max-height: 55vh; }
 }
+
+@media (min-width: 641px){
+  .hero_con{ padding-top: 12px; }  /* subtle buffer */
+}
+
 
 /* ================== STORY (2x2 grid) ================== */
 .story_con{
@@ -197,6 +320,31 @@ h1,h2,h3{
 @media (max-width: 360px){
   .story_text{ max-width: 52ch; }
 }
+
+@media (max-width: 700px){
+  .story_text--right::after{
+    content: "";
+    display: block;
+    width: 80%;
+    height: 3px;
+    margin: 24px auto;
+  
+    background-color: #bba2f7;
+box-shadow: 0 0 10px #bba2f7;
+
+
+
+    border-radius: 3px;
+    animation: shimmer .5s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
 
 /* ================== EVENTS (diamond layout with square cards) ================== */
 .events_con h1{ padding-top: 40px; padding-bottom: 40px; }
@@ -310,18 +458,19 @@ h1,h2,h3{
   scroll-snap-align: center;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.25s ease;
+  
 }
 
 .carousel-track img:hover{ transform: scale(1.1); }
 
-/* .arrow{
+.arrow{
   position:absolute; top:50%; transform: translateY(-50%);
   background: transparent; border:none; font-size:24px; cursor:pointer; padding:5px 10px; z-index:100;
 }
-.left{ left:10px; } .right{ right:10px; } */
+/* .left{ left:10px; } .right{ right:10px; } */
 
 .arrow {
-  position: absolute;
+  /* position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(255,255,255,0.7);
@@ -329,17 +478,85 @@ h1,h2,h3{
   font-size: 24px;
   cursor: pointer;
   padding: 5px 10px;
-  z-index: 100;
+  z-index: 9999;
   border-radius: 50%;
-  transition: background 0.3s, opacity 0.3s;
+  transition: background 0.3s, opacity 0.3s; */
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;              /* make sure above everything */
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.85);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  cursor: pointer;
+  transition: transform .15s ease, opacity .2s;
+  opacity: 1;
+}
+
+.carousel-track::before {
+  content: "";
+  flex: 0 0 30%;   /* screen width ka aadha */
+}
+
+.carousel-track img:first-child{
+  margin-left: 20vw;
+  object-fit: cover;
+  object-position: 20% center;
+ 
+    /* adjust till it centers perfectly */
+}
+
+
+
+.arrow::after{
+  content: "";
+  position: absolute;
+  inset: -8px;                /* increases clickable box by 8px on all sides */
+  border-radius: 50%;
+}
+
+.arrow[aria-hidden="true"] { opacity: 0; pointer-events: none; transform: translateY(-50%) scale(.95); }
+
+.carousel-track{
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 80px;          /* ← pehle se ho to thoda badha do */
+  /* padding-left: 80px; */
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .arrow:hover {
   background: rgba(255,255,255,0.9);
 }
 
-/* .left { left: 10px; opacity: 0; pointer-events: none; } hidden by default
-.right { right: 10px; opacity: 1; } always visible */
+.left { left: 10px; opacity: 0; pointer-events: none; }  /* hidden by default */
+.right { right: 10px; opacity: 1; }  /* always visible */
+
+@media (max-width: 520px) {
+
+  .carousel-track::before {
+  content: "";
+  flex: 0 0 50%;   /* screen width ka aadha */
+}
+
+.carousel-track img:first-child{
+  margin-left: 190vw;
+ 
+    /* adjust till it centers perfectly */
+}
+  
+}
 
 
 /* ================== RSVP ================== */
@@ -404,14 +621,25 @@ h1,h2,h3{
   display:flex; align-items:center; justify-content:center; flex-wrap:wrap;
   width:100%; color:#800000; text-shadow: rgba(0,0,0,0.3);
   padding: 24px var(--gutter);
+  text-shadow: rgba(0,0,0,0.3); font-family: 'Caveat',cursive; font-size: 30px;
 }
 .footer img{
-  position:absolute; right:20px; bottom:20px;
+  position:absolute; right:20px; bottom:15px;
   width: clamp(40px, 10vw, 70px);
   mix-blend-mode:multiply; border:hidden; outline:hidden; border-radius:60px;
   animation: bounce 2s infinite;
 }
 @keyframes bounce{ 0%{ transform: translateY(-10px); } 100%{ transform: translateY(0); } }
+
+@media (max-width:520px) {
+  .footer{
+  font-size: 14px;}
+
+  .footer img{
+    position: absolute; position: absolute; right: 20px; top: 30px;
+  }
+}
+
 
 /* ================== POPUPS (success/failure share same classes) ================== */
 .success-overlay{
