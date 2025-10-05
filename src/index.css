@@ -160,6 +160,7 @@ h1,h2,h3{
   .navbar a{
     flex: 0 0 auto;          /* items shrink/expand na karein */
     display: inline-block;   /* text-align center respect kare */
+    font-family: fantasy;
   }
 }
 
@@ -510,12 +511,15 @@ box-shadow: 0 0 10px #bba2f7;
   margin:8px 0 0; padding:8px 10px; font-size:13px; line-height:1.45; color:#444;
   background:#f7f7fb; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,.06);
 }
+
+.event-card-wedding .event-img1:hover { border:  10px solid goldenrod;}
 .event-card:hover .extra{ max-height:150px; opacity:1; transform: translateY(0); }
 
 @media (max-width: 520px){
   .events-grid{ grid-template-columns:1fr; grid-template-rows:auto; }
   .event-card:nth-child(n){ grid-column:auto; grid-row:auto; }
   .event-card{ width: min(240px, 90vw); }
+  .event-card-wedding .event-img1:hover { border:  10px solid goldenrod;}
 }
 
 /* ================== GALLERY CAROUSEL ================== */
@@ -623,7 +627,7 @@ box-shadow: 0 0 10px #bba2f7;
 }
 
 .carousel-track img:first-child{
-  margin-left: 190vw;
+  margin-left: 400vw;
  
     /* adjust till it centers perfectly */
 }
@@ -638,7 +642,7 @@ box-shadow: 0 0 10px #bba2f7;
 }
 
 .carousel-track img:first-child{
-  margin-left: 80vw;
+  margin-left: 180vw;
  
     /* adjust till it centers perfectly */
 }
