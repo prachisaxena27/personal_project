@@ -758,7 +758,7 @@ box-shadow: 0 0 10px #bba2f7;
 
 /* ================== SMALL-SCREEN TWEAKS ================== */
 @media (max-width: 640px){
-  .navbar{ gap:12px; }
+  .navbar{ gap:12px; font-family: fantasy; }
   .hero_con h1{ padding-bottom: 24px; }
-  .linebreak{ padding-bottom: 16px; }
+  /* .linebreak{ padding-bottom: 16px; } */
 }
