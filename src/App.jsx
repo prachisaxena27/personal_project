@@ -4,9 +4,6 @@ import musicIcon from "./assets/pics/music.png"
 import Haldi from "./assets/pics/Haldi.jpeg"
 import Our_Pic from "./assets/pics/Our_Pic.jpg"
 import confetti from "canvas-confetti"
-// import sizzu from "./assets/pics/sizzu.jpg"
-//  import flowers from "./assets/pics/falling_petals.gif"
-// import hearts from "./assets/pics/falling_hearts1.jpg"
 
 
 
@@ -48,34 +45,69 @@ const App = () => {
     const interval = setInterval(createFalling, 100);
     setTimeout(()=> clearInterval(interval), 20000);
   },[]);
-  const [leftarrow, setleftarrow]=useState(false);
-  const [rightarrow, setrightarrow]= useState(true);
-  const [currentIndex, setCurrentIndex] = useState(0)
+
+  const [leftArrow, setLeftArrow] = useState(false);
+  const [rightArrow, setRightArrow] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const trackRef = useRef(null);
 
-  const scrollLeft = () => {
-    const newIndex = currentIndex - 1;
-    setCurrentIndex(newIndex);
-    setrightarrow(true);
-    trackRef.current.scrollLeft -= 300; // kitna slide karna hai
+  // Scroll to a particular image index
+  const scrollToIndex = (index) => {
+    const track = trackRef.current;
+    if (!track) return;
 
-    if(newIndex == 0)
-    {
-      setleftarrow(false);
-    }
+    const images = track.querySelectorAll("img");
+    if (!images.length) return;
+
+    if (index < 0) index = 0;
+    if (index >= images.length) index = images.length - 1;
+    setCurrentIndex(index);
+
+    const img = images[index];
+    const imgCenter = img.offsetLeft + img.offsetWidth / 2;
+    const trackCenter = track.clientWidth / 2;
+
+    track.scrollTo({
+      left: imgCenter - trackCenter,
+      behavior: "smooth",
+    });
+
+    // Update arrow visibility
+    setLeftArrow(index > 0);
+    setRightArrow(index < images.length - 1);
   };
 
-  const scrollRight = () => {
-    const newIndex = currentIndex + 1;
-    setCurrentIndex(newIndex);
-    setleftarrow(true);
-    trackRef.current.scrollLeft += 300;
-
-    if(newIndex == lastIndex)
-    {
-      setrightarrow(false);
+  // On mount → scroll to first image center
+  useEffect(() => {
+    if (trackRef.current) {
+      scrollToIndex(0);
     }
-  };
+    // eslint-disable-next-line
+  }, []);
+
+  // const scrollLeft = () => {
+  //   const newIndex = currentIndex - 1;
+  //   setCurrentIndex(newIndex);
+  //   setrightarrow(true);
+  //   trackRef.current.scrollLeft -= 300; // kitna slide karna hai
+
+  //   if(newIndex == 0)
+  //   {
+  //     setleftarrow(false);
+  //   }
+  // };
+
+  // const scrollRight = () => {
+  //   const newIndex = currentIndex + 1;
+  //   setCurrentIndex(newIndex);
+  //   setleftarrow(true);
+  //   trackRef.current.scrollLeft += 300;
+
+  //   if(newIndex == lastIndex)
+  //   {
+  //     setrightarrow(false);
+  //   }
+  // };
 
 
   const [isPlaying, setIsPlaying]=useState(false)
@@ -476,23 +508,41 @@ const App = () => {
 
       {/* Left Arrow */}
 
-      {leftarrow &&
-      <button className="arrow left" onClick={scrollLeft}>
+      {leftArrow &&
+      <button className="arrow left" onClick={() => scrollToIndex(currentIndex - 1)} 
+      style={{
+          left: 10,
+          opacity: leftArrow ? 1 : 0,
+          pointerEvents: leftArrow ? "auto" : "none",
+        }}>
         <img src="https://cdn-icons-png.freepik.com/512/271/271220.png" alt="" height={50} />
       </button> }
 
       {/* Track */}
-      <div className="carousel-track" ref={trackRef}>
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..." height={500} />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..." height={500} />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..." height={500}  />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..." height={500} />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..." height={500} />
-      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..." height={500} />
+      <div className="carousel-track" ref={trackRef} id='carouselTrack'
+      style={{
+          display: "flex",
+          overflowX: "auto",
+          scrollSnapType: "x mandatory",
+          justifyContent: "center",
+          gap: "16px",
+          scrollBehavior: "smooth",
+        }}>
+      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      <img src="https://static.vecteezy.com/system/resources/previews/012/002/539/non_2x/traditional-wedding-ceremony-beautiful-culture-of-india-or-decorated-for-haldi-ceremony-photo.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
       </div>
 
       {/* Right Arrow */}
-      {rightarrow && <button className="arrow right" onClick={scrollRight}>
+      {rightArrow && <button className="arrow right" onClick={() => scrollToIndex(currentIndex + 1)}
+         style={{
+          right: 10,
+          opacity: rightArrow ? 1 : 0.5,
+          pointerEvents: rightArrow ? "auto" : "none",
+        }}>
         <img src="https://cdn-icons-png.flaticon.com/512/32/32213.png" alt="" height={50} />
       </button> }
     </div>

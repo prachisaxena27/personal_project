@@ -298,23 +298,49 @@ h1,h2,h3{
   overflow:hidden;
 }
 .carousel h1{ padding-bottom:40px; }
-.carousel-track{
+/* .carousel-track{
   display:flex; overflow-x: auto; scroll-behavior: smooth; scroll-snap-type: x mandatory;
-}
+} */
 .carousel-track::-webkit-scrollbar{ display:none; }
-.carousel-track img{
-  scroll-snap-align: start;
-  width: clamp(180px, 40vw, 250px);
-  margin-right: 10px; border-radius: 10px; padding-top: 20px; padding-right: 15px;
-  transition: transform .25s ease;
+.carousel-track img {
+  width: clamp(220px, 80vw, 400px); /* bada look */
+  height: auto;                     /* height automatically set */
+  border-radius: 12px;
+  object-fit: cover;
+  scroll-snap-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease;
 }
+
 .carousel-track img:hover{ transform: scale(1.1); }
 
-.arrow{
+/* .arrow{
   position:absolute; top:50%; transform: translateY(-50%);
   background: transparent; border:none; font-size:24px; cursor:pointer; padding:5px 10px; z-index:100;
 }
-.left{ left:10px; } .right{ right:10px; }
+.left{ left:10px; } .right{ right:10px; } */
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 10px;
+  z-index: 100;
+  border-radius: 50%;
+  transition: background 0.3s, opacity 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(255,255,255,0.9);
+}
+
+/* .left { left: 10px; opacity: 0; pointer-events: none; } hidden by default
+.right { right: 10px; opacity: 1; } always visible */
+
 
 /* ================== RSVP ================== */
 .rsvp_con{
