@@ -305,6 +305,29 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
 
                   <img src={Our_Pic} alt="" />
 
+                  <p>
+                    Amidst all the chaos and hustle, my heart found its forever 💕 
+                  <br />
+                  <br />
+
+                     Before we fell in love, we fell into endless brainstorming sessions, case studies, and problem-solving marathons. Somewhere between product roadmaps and late-night debates, we discovered the best idea we’d ever co-create — US❣️ 
+
+                     <br />
+                     <br />
+
+                      We are getting married on December 2nd, 2025! 
+
+                     <br />
+                     <br />
+                      So block your calendars and get ready for a day full of love, laughter, and dance floors on fire. 💃🕺
+
+                     <br />
+                     <br />
+
+
+                       #AAstreaming_forever
+                  </p>
+
                   </div>
               </div>
 
@@ -322,7 +345,10 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
             <section id='story'>
                <div className='story_con'>
 
-                {/* <h1> Our Story </h1> */}
+                <h1> How It All Began... </h1>
+
+                <div class="story_heading_divider"></div>
+
                 
                 
 
@@ -360,8 +386,26 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
   <div className="story_text story_text--left">
     <h3>His side of the story</h3>
     <p>
-      “She asked for a coffee recommendation… I’ve been recommending
-      myself ever since.”
+      Amidst all the chaos and hustle, my heart found its forever 💕 
+                  <br />
+                  <br />
+
+                     Before we fell in love, we fell into endless brainstorming sessions, case studies, and problem-solving marathons. Somewhere between product roadmaps and late-night debates, we discovered the best idea we’d ever co-create — US❣️ 
+
+                     <br />
+                     <br />
+
+                      We are getting married on December 2nd, 2025! 
+
+                     <br />
+                     <br />
+                      So block your calendars and get ready for a day full of love, laughter, and dance floors on fire. 💃🕺
+
+                     <br />
+                     <br />
+
+
+                       #AAstreaming_forever
     </p>
   </div>
   <figure className="story_img story_img--right">
