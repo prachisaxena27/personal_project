@@ -336,11 +336,17 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
             
 
 
-<svg class="doodle-svg" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
-  <path d="M5 15 Q50 5, 100 15 T195 15 T295 15 T395 15" 
-        stroke="#bba2f7" stroke-width="3" fill="transparent" stroke-linecap="round"/>
-</svg>
-
+   <div class="doodle-wrap">
+  <svg class="doodle-svg" viewBox="0 0 400 30" xmlns="http://www.w3.org/2000/svg">
+    <path d="M5 15 Q50 5, 100 15 T195 15 T295 15 T395 15"
+          stroke="#b96ebf"
+          stroke-width="3"
+          fill="transparent"
+          stroke-linecap="round"/>
+  </svg>
+  <span class="sparkle sparkle-left">✦</span>
+  <span class="sparkle sparkle-right">✦</span>
+</div>
 
             <section id='story'>
                <div className='story_con'>
@@ -650,7 +656,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
         {showFailure && (
         <div className={`success-overlay ${fadeOut ? "fade-out" : ""}`}>
           <div className="success-popup">
-            <h2>🎉 RSVP Successful!</h2>
+            <h2> 🥺 RSVP Successful!</h2>
             <p>But okay 💔. See you around then 💕</p>
           </div>
         </div>
@@ -659,8 +665,8 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
       {showAlert && (
         <div className={`success-overlay ${fadeOut ? "fade-out" : ""}`}>
           <div className="success-popup">
-            <h2>🎉 RSVP Pending....</h2>
-            <p> Please enter your Details... 💔</p>
+            <h2> 🥺 RSVP Pending....</h2>
+            <p> Please enter your Details... 😁 </p>
           </div>
         </div>
       )}

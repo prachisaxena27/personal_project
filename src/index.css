@@ -553,17 +553,6 @@ box-shadow: 0 0 10px #bba2f7;
 /* .left{ left:10px; } .right{ right:10px; } */
 
 .arrow {
-  /* position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  padding: 5px 10px;
-  z-index: 9999;
-  border-radius: 50%;
-  transition: background 0.3s, opacity 0.3s; */
 
   position: absolute;
   top: 50%;
@@ -638,8 +627,25 @@ box-shadow: 0 0 10px #bba2f7;
  
     /* adjust till it centers perfectly */
 }
-  
+ 
 }
+
+@media (min-width: 768px) {
+
+  .carousel-track::before {
+  content: "";
+  flex: 0 0 50%;   /* screen width ka aadha */
+}
+
+.carousel-track img:first-child{
+  margin-left: 80vw;
+ 
+    /* adjust till it centers perfectly */
+}
+ 
+}
+
+
 
 
 /* ================== RSVP ================== */
@@ -687,6 +693,7 @@ box-shadow: 0 0 10px #bba2f7;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer; transition: transform .2s ease, opacity .2s ease;
   opacity:.9; font-weight:600; font-size:16px; margin-top:8px;
+   color: #4b2354;
 }
 .rsvp_btn:hover{ opacity:1; transform: translateY(-2px); }
 .rsvp_btn:active{ box-shadow: 0 5px #e0c3fc; transform: translateY(3px); }
