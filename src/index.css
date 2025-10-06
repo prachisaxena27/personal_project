@@ -69,12 +69,12 @@ h1,h2,h3{
   z-index: 999; pointer-events: none;
 }
 .petal{
-  background-image: url("https://png.pngtree.com/png-vector/20250205/ourmid/pngtree-red-rose-petals-aesthetic-romantic-border-png-image_15387976.png");
+  background-image: url("./assets/pics/petal.png");
  
   mix-blend-mode: multiply; border:none; outline:none;
 }
 .heart{
-  background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtyMl7UJeuVEiAGN4jqlyN6Jy_bL5yPOrTuQ&s");
+  background-image: url("./assets/pics/heart.jpg");
   
   mix-blend-mode: multiply; border:none; outline:none;
 }
@@ -179,7 +179,9 @@ h1,h2,h3{
   .navbar a{
     flex: 0 0 auto;          /* items shrink/expand na karein */
     display: inline-block;   /* text-align center respect kare */
-    font-family: fantasy;
+    font-family: 'Cinzel Decoration', cursive;
+    font-weight: 400;
+    color: #333;
   }
 }
 
@@ -669,65 +671,6 @@ box-shadow: 0 0 10px #bba2f7;
 }
 
 
-
-
-/* ================== RSVP ================== */
-.rsvp_con{
-  width:100%; min-height:50vh;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  flex-wrap:wrap; text-align:center; padding-inline: var(--gutter);
-}
-.rsvp_con h1{ padding-top: 40px; padding-bottom: 40px; }
-.rsvp_con p { padding-bottom: 40px; }
-
-.rsvp_span{
-  display:flex; flex-direction:column;
-  width: min(520px, 100%);
-  margin-inline:auto; padding-bottom: 24px;
-}
-.rsvp_span input{
-  padding: 10px 12px;
-  min-height: 42px;
-  border: 1px solid var(--gold);
-  outline: 1px solid var(--gold);
-  text-indent: 5px; font-size: 16px;
-}
-.rsvp_span input::placeholder{ opacity:1 !important; color: gray !important; }
-
-.rsvp_span textarea{
-  border:1px solid var(--gold);
-  outline:1px solid var(--gold);
-  min-height: 110px; padding:10px; font-size: 16px;
-}
-.rsvp_span textarea::placeholder{ text-indent:5px; opacity:1; }
-
-.rad{
-  width: min(520px, 100%);
-  margin-inline:auto; padding: 6px 0 24px;
-  display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:12px;
-}
-.rad input{ width:auto; margin-right:8px; border:none; outline:none; }
-.rad label{ display:inline-flex; align-items:center; gap:8px; }
-
-.rsvp_btn{
-  width: clamp(160px, 35vw, 260px);
-  height: 48px; border:1px solid var(--gold); outline:1px solid var(--gold);
-  background-color: peachpuff; border-radius: 12px;
-  display:flex; align-items:center; justify-content:center;
-  cursor:pointer; transition: transform .2s ease, opacity .2s ease;
-  opacity:.9; font-weight:600; font-size:16px; margin-top:8px;
-   color: #4b2354;
-}
-.rsvp_btn:hover{ opacity:1; transform: translateY(-2px); }
-.rsvp_btn:active{ box-shadow: 0 5px #e0c3fc; transform: translateY(3px); }
-.rsvp_btn1{ padding:0; height:auto; }
-
-/* Focus style (accessibility) */
-.rsvp_span input:focus, .rsvp_span textarea:focus{
-  outline: 2px solid var(--gold);
-  box-shadow: 0 0 0 3px rgba(218,165,32,.18);
-}
-
 /* ================== FOOTER ================== */
 .footer{
   min-height: 10vh; position: relative; text-align:center;
@@ -783,5 +726,5 @@ box-shadow: 0 0 10px #bba2f7;
 @media (max-width: 640px){
   .navbar{ gap:12px;  }
   .hero_con h1{ padding-bottom: 24px; }
-  /* .linebreak{ padding-bottom: 16px; } */
+  
 }
