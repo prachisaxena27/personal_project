@@ -1,7 +1,11 @@
 import { React, useEffect, useRef, useState } from 'react'
 import mySong from "./assets/audio/instrumental.mp3"
 import musicIcon from "./assets/pics/music.png"
-
+import Pic_1 from "./assets/pics/Pic_1.jpg"
+import Pic_2 from "./assets/pics/Pic_2.jpg"
+import Pic_3 from "./assets/pics/Pic_3.jpg"
+import Pic_4 from "./assets/pics/Pic_4.jpg"
+import Pic_5 from "./assets/pics/Pic_5.jpg"
 import Our_Pic from "./assets/pics/Our_Pic.jpg"
 
 
@@ -402,11 +406,11 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
           gap: "16px",
           scrollBehavior: "smooth",
         }}>
-      <img src="./src/assets/pics/Pic_1.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src="./src/assets/pics/Pic_2.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src="./src/assets/pics/Pic_5.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src="./src/assets/pics/Pic_4.jpg" alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
-      <img src="./src/assets/pics/Pic_3.jpg" alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      <img src={Pic_1} alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src={Pic_2} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src={Pic_5} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
+      <img src={Pic_4} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      <img src={Pic_3} alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
       
       </div>
 
