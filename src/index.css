@@ -26,7 +26,7 @@ html{
   scroll-behavior: smooth;
   min-height: 100%;
   /* background: linear-gradient(to bottom, #e0c3fc , #c2e9fb , #a1c4fd); */
-  background: linear-gradient(to bottom, #fbc2eb, #a6c1ee, #e0c3fc);  
+  background: linear-gradient(to bottom,  #fffaf0, #a6c1ee, #a6c1ee, #e0c3fc);  
   /* background: linear-gradient(to bottom, #ffecd2,  #fcb69f); */
   /* background: linear-gradient(to bottom, #f6d365 , #fda085); */
   /* background: linear-gradient(to bottom, #e0c3fc, #8ec5fc); */
@@ -60,28 +60,6 @@ h1,h2,h3{
 /* ================== FLOATERS / DECOR ================== */
 
 
-.petal, .heart{
-  position: fixed;
-  top: -10px;
-  width: 30px; height: 30px;
-  background-size: cover;
-  animation: fall linear forwards;
-  z-index: 999; pointer-events: none;
-}
-.petal{
-  background-image: url("./assets/pics/petal.png");
- 
-  mix-blend-mode: multiply; border:none; outline:none;
-}
-.heart{
-  background-image: url("./assets/pics/heart.jpg");
-  
-  mix-blend-mode: multiply; border:none; outline:none;
-}
-@keyframes fall{
-  0%{ transform: translateY(0) rotate(0deg); opacity:1; }
-  100%{ transform: translateY(100vh) rotate(360deg); opacity:.5; }
-}
 
 /* Music btn */
 .msc{
@@ -539,6 +517,11 @@ box-shadow: 0 0 10px #bba2f7;
 @media (max-width: 520px){
   .events-grid{ grid-template-columns:1fr; grid-template-rows:auto; }
   .event-card:nth-child(n){ grid-column:auto; grid-row:auto; }
+  .event-card:nth-child(1){ grid-column:1; grid-row:1; }
+.event-card:nth-child(2){ grid-column:1; grid-row:2; }
+.event-card:nth-child(3){ grid-column:1; grid-row:4; }
+.event-card:nth-child(4){ grid-column:1; grid-row:3; }
+.event-card:nth-child(5){ grid-column:1; grid-row:5; }
   .event-card{ width: min(240px, 90vw); }
   .event-card-wedding .event-img1:hover { border:  10px solid goldenrod;}
 }

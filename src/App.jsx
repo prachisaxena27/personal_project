@@ -17,30 +17,6 @@ const App = () => {
   
 
 
-  
-  
-
-  useEffect(()=>{
-    const createFalling = () =>{
-      const element = document.createElement("div");
-
-      const isHeart = Math.random() > 0.5;
-      element.classList.add(isHeart ? "heart" : "petal");
-
-      element.style.left = Math.random() * 100 + "vw";
-      element.style.animationDuration = 3 + Math.random() * 2 + "s";
-
-      document.body.appendChild(element);
-
-      setTimeout(()=> {
-        element.remove();
-      }, 10000);
-    };
-
-    const interval = setInterval(createFalling, 100);
-    setTimeout(()=> clearInterval(interval), 20000);
-  },[]);
-
   const [leftArrow, setLeftArrow] = useState(false);
   const [rightArrow, setRightArrow] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
