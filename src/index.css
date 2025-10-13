@@ -692,8 +692,9 @@ box-shadow: 0 0 10px #bba2f7;
   font-size: 14px;}
 
   .footer img{
-    position: absolute; right: 10px; top: 30px; 
-    /* width: clamp(40px, 5vw, 40px); */
+    position: absolute; right: 10px; 
+    bottom: 20px; 
+    width: clamp(40px, 5vw, 40px);
   }
 }
 
