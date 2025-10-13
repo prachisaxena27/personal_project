@@ -694,7 +694,7 @@ box-shadow: 0 0 10px #bba2f7;
   .footer img{
     position: absolute; right: 10px; 
     bottom: 20px; 
-    width: clamp(40px, 5vw, 40px);
+    /* width: clamp(40px, 5vw, 40px); */
   }
 }
 
