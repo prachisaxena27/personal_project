@@ -145,6 +145,8 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
 
                   <img src={Our_Pic} alt="" />
 
+                  </div>
+
                   <p>
                     Amidst all the chaos and hustle, my heart found its forever 💕 
                   <br />
@@ -168,7 +170,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
                        #AAstreaming_forever
                   </p>
 
-                  </div>
+                  
               </div>
 
 

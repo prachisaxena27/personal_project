@@ -201,7 +201,7 @@ background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparen
   position: absolute;
    /* transform: translateY(1px); */
   font-size: 22px;
-  color: #fff; /* white sparkle for highlight */
+  color: #b96ebf; /* white sparkle for highlight */
   text-shadow:
     0 0 8px #e0b4f2,
     0 0 15px #b96ebf,
@@ -225,40 +225,57 @@ background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparen
 
 
 /* ================== HERO ================== */
-
-@media (min-width: 641px) {
-  .hero_con{
-    padding-top: 40px;
-  }
-}
-.hero_con{
+.hero_con {
+  
   width: 100%;
   margin-top: 40px;
-  display:flex; flex-direction: column; align-items:center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   padding-inline: var(--gutter);
 }
-.hero_con h1{ padding-bottom: 40px; }
-.hero_con p{ text-align: center; }
 
-.hero_img{ width: 100%; }
-.hero_img img{
-  width: 100%; height: auto; max-height: 150vh;
-  display: block;
-  object-fit: auto; 
-  /* object-position: center; */
+.hero_con h1 {
   padding-bottom: 40px;
 }
 
-.hero_img img{ display:block; }
+.hero_con p {
+  text-align: center;
 
-@media (max-width: 768px){
-  .hero_img img{ max-height: 55vh; }
+}
 
+/* Hero image container */
+.hero_img {
+  width: 100%;}
+
+/* Hero image itself */
+.hero_img img {
+  width: 100%;
+  height: auto;
+  max-height: 140vh;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  padding-bottom: 40px;
   
 }
 
-@media (min-width: 641px){
-  .hero_con{ padding-top: 12px; }  /* subtle buffer */
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .hero_img img {
+    max-height: 85vh;
+    
+  }
+}
+
+
+
+/* Slight top padding for mid screens */
+@media (min-width: 641px) {
+  .hero_con {
+    padding-top: 12px;
+  }
 }
 
 
@@ -675,7 +692,8 @@ box-shadow: 0 0 10px #bba2f7;
   font-size: 14px;}
 
   .footer img{
-    position: absolute; right: 20px; top: 30px;
+    position: absolute; right: 10px; top: 30px; 
+    width: clamp(40px, 5vw, 40px);
   }
 }
 
