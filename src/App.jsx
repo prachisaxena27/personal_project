@@ -7,6 +7,7 @@ import Pic_3 from "./assets/pics/Pic_3.jpg"
 import Pic_4 from "./assets/pics/Pic_4.jpg"
 import Pic_5 from "./assets/pics/Pic_5.jpg"
 import Our_Pic from "./assets/pics/Our_Pic.jpg"
+import Events_Dress_Code from "./assets/pics/Events_Dress_Code.jpeg"
 
 
 
@@ -389,6 +390,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
       <img src={Pic_5} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
       <img src={Pic_4} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
       <img src={Pic_3} alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      <img src={Events_Dress_Code} alt='Image Loading...' style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
       
       </div>
 
