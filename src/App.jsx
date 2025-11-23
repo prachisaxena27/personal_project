@@ -1,6 +1,8 @@
 import { React, useEffect, useRef, useState } from 'react'
 import mySong from "./assets/audio/instrumental.mp3"
 import musicIcon from "./assets/pics/music.png"
+import Haldi from "./assets/pics/Haldi.png"
+import Engagement from "./assets/pics/Engagement.png"
 import Pic_1 from "./assets/pics/Pic_1.jpg"
 import Pic_2 from "./assets/pics/Pic_2.jpg"
 import Pic_3 from "./assets/pics/Pic_3.jpg"
@@ -126,6 +128,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
               <a href="#story"> Our Story </a>
               <a href="#events"> Events </a>
               <a href="#gallery"> Gallery </a>
+              <a href='#map'> Map </a>
 
               </div>
             </nav>
@@ -290,10 +293,12 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
   
   <div className="event-card">
     <div className="event-img">
-      <img src="https://www.shutterstock.com/image-illustration/haldi-couples-wedding-goal-ceremony-260nw-2349308419.jpg" alt=""/>
+      {/* <img src="https://www.shutterstock.com/image-illustration/haldi-couples-wedding-goal-ceremony-260nw-2349308419.jpg" alt=""/> */}
+
+      <img src={Haldi} alt="" />
     </div>
     <p className="event-name">Haldi</p>
-    <div className="extra"><p>“Haldi ki roshni, khushiyon ki kahani ✨”</p></div>
+    <div className="extra"><p> <b> Monday </b> <br /> <b> 1<sup>st </sup> December, 2025 </b> <br /> <b>Time :- </b> 12:00 pm <br /> <b> Venue :- </b> Orchha Club & Resort <br /> (Pool Side)   </p></div>
   </div>
 
 
@@ -312,17 +317,19 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
       <img src="https://static.vecteezy.com/system/resources/previews/055/004/590/non_2x/indian-wedding-icon-illustration-free-vector.jpg" alt=""/>
     </div>
     <p className="event-name">Wedding</p>
-    <div className="extra"><p>“Shaadi ki shaan, dosti aur armaan 💍”</p></div>
+    <div className="extra"><p> <b> Tuesday </b> <br /> <b> 2<sup>nd </sup> December, 2025 </b> <br /> <b>Time :- </b> 1:00 pm onwards <br /> <b> Venue :- </b> Orchha Club & Resort </p></div>
   </div>
   </div>
 
   
   <div className="event-card">
     <div className="event-img">
-      <img src="https://thumbs.dreamstime.com/b/bride-groom-indian-traditional-wedding-attire-323874213.jpg" alt=""/>
+      {/* <img src="https://thumbs.dreamstime.com/b/bride-groom-indian-traditional-wedding-attire-323874213.jpg" alt=""/> */}
+
+      <img src={Engagement} alt="" />
     </div>
-    <p className="event-name">Sangeet</p>
-    <div className="extra"><p>“Nach gaana, dil se jamaana 🎶”</p></div>
+    <p className="event-name">Engagement</p>
+    <div className="extra"><p><b> Monday </b> <br /> <b> 1<sup>st </sup> December, 2025 </b> <br /> <b>Time :- </b> 5:00 pm onwards <br /> <b> Venue :- </b> Orchha Club & Resort</p></div>
   </div>
 
   
@@ -419,6 +426,18 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
   <span class="sparkle sparkle-left">✦</span>
   <span class="sparkle sparkle-right">✦</span>
 </div>
+
+<section id='map'>
+
+
+<div class="map-wrap">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.9735629293386!2d78.6432116!3d25.372202499999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397778925c83b2b7%3A0x5be8c874e7ad8e79!2sOrchha%20Club%20%26%20Resort%20-%20OCR!5e0!3m2!1sen!2sin!4v1763907827433!5m2!1sen!2sin" width="100%" height="550"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+</div>
+
+
+
+</section>
 
            
 
