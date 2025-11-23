@@ -79,7 +79,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
 
     <>
     
-          <title> Wedding Site </title>
+          
         
 
 
