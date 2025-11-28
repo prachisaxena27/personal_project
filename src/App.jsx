@@ -307,7 +307,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT438N6ThcITa6chh4HwcR100AoPkDpN5Drdw&s" alt=""/>
     </div>
     <p className="event-name">Mehendi</p>
-    <div className="extra"><p>“Mehendi ke rang, pyaar ke sang 💚”</p></div>
+    {/* <div className="extra"><p>“Mehendi ke rang, pyaar ke sang 💚”</p></div> */}
   </div>
 
 
@@ -338,7 +338,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
       <img src="https://cdn4.vectorstock.com/i/1000x1000/80/08/wedding-reception-rgb-color-icon-vector-35758008.jpg" alt=""/>
     </div>
     <p className="event-name">Reception</p>
-    <div className="extra"><p>“Nayi shuruat, pyar ki baat 🌸”</p></div>
+    {/* <div className="extra"><p>“Nayi shuruat, pyar ki baat 🌸”</p></div> */}
   </div>
 </div>
 
