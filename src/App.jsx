@@ -147,7 +147,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
 
                
 
-                  <img src={Our_Pic} alt="" />
+                  <img src={Our_Pic} alt="" loading='eager'/>
 
                   </div>
 
@@ -211,7 +211,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
   </figure>
   <div className="story_text story_text--right">
     <h3>Her side of the story</h3>
-      <p> Amidst all the chaos and hustle, my heart found its forever 💕 
+      {/* <p> Amidst all the chaos and hustle, my heart found its forever 💕 
                   <br />
                   <br />
 
@@ -227,10 +227,147 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
                       So block your calendars and get ready for a day full of love, laughter, and dance floors on fire. 💃🕺
 
                      <br />
-                     <br />
+                     <br /> */}
 
+                     <p>If I’m being completely honest… our story didn’t begin like a fairytale. It began with something <b>so random </b> that even today makes me laugh — a bio that said, <b>“Looking for a bride for my son.”</b>
+                     <br/>
+Weird, right? But something… <b>something </b> in that moment made me accept the request anyway.
 
-                       #AAstreaming_forever </p>
+<br/>
+<br/>
+
+I texted on the given number only to discover it wasn’t Aditya at all — it was his mom.
+And oh my God, she was so sweet! She immediately shared his number with me, and that’s how the first real line of our story was written:
+<b>“Aditya, your mother has shared your number with me.”</b>
+
+<br />
+<br />
+
+From there, our first call just <b>happened.</b>
+<br />
+We spoke about work, life, dreams… laughed a bit, teased a bit — nothing serious, just the beginning of something we didn’t yet understand. We thought we’d talk again soon, but life had different plans.
+
+<br />
+<br />
+
+We lost touch.
+<br />
+<br />
+
+For almost a month.
+
+<br />
+<br />
+
+Then one random day, his name suddenly popped into my mind. And like any girl who wants some chapar-chapar, I pinged him again — and honestly, <b>that’s when our real story began.</b>
+
+<br />
+<br />
+
+We started talking more… A LOT more.
+
+<br />
+Calls where I told him every tiny detail of my day, video calls filled with laughter, rants about life and people, and him — patiently listening, laughing, supporting, and taking my side even when I was bitching like a typical girl.
+<br />
+
+<b>It felt good.
+<br />
+It felt easy.
+<br />
+It felt like home.</b>
+<br />
+<br />
+
+After weeks of talking, we decided to meet.
+<br />
+And guess what? That plan also failed.
+<br />
+Classic us. 😄
+<br />
+<br />
+
+But when we finally met in April in Hyderabad, everything changed.
+<br />
+He <b>drove all the way from Bangalore </b> to meet me — and that itself felt unreal.
+We spent time together… talking, meeting, sharing deep conversations — and somewhere in those simple unplanned moments, something clicked.
+<br />
+Not loudly.
+<br />
+Not dramatically.
+<br />
+Just naturally.
+<br />
+<br />
+
+I later visited Bangalore, and we spent more time together — roaming around, exploring places, having the most spontaneous days. And I remember thinking, in one quiet moment:
+
+<br />
+<br />
+
+<b>“This is peace.
+  <br />
+This is what I’ve been looking for all my life.”</b>
+
+<br />
+<br />
+
+We didn’t have a dramatic proposal.
+<br />
+We didn’t have a cinematic confession.
+<br />
+We just looked at each other one day and knew —
+<br />
+<b>It’s us. It has always been us.</b>
+<br />
+<br />
+
+Soon, our parents met… and in India, you know what that means —
+<br />
+<b>Wedding bells!</b>
+
+<br />
+<br />
+
+Life since then has been a beautiful mix of laughter, learning, arguments, comfort, and the softest kind of love.
+<br />
+We’ve travelled together — Bangalore, Goa, Banaras, Rishikesh — and every place felt special only because he was there.
+<br />
+Whether it’s a room, a crowded street, a long drive, or a pani-puri date, I feel the same thing every time:
+<br />
+<br />
+
+<b>With him, I am safe.
+  <br />
+With him, I am home.
+<br />
+With him, I am me.</b>
+
+<br />
+<br />
+
+We’ve seen ups and downs, fears and fights, joy and madness — but we navigated it all together. I know I panic a lot, but he has been my calm in every storm.
+
+<br />
+<br />
+
+And today, after all those tiny twists and turns,
+<br />
+<b>here we are — getting married on 2nd December.</b>
+<br />
+<br />
+
+I am grateful.
+<br />
+I am blessed.
+<br />
+I am in love — deeply, honestly, endlessly.
+<br />
+<br />
+
+Here’s to us — our peace, our chaos, our story.
+<br />
+I love you, Cutuu. Always
+<br /></p>
   
   </div>
 
@@ -392,12 +529,12 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
           gap: "16px",
           scrollBehavior: "smooth",
         }}>
-      <img src={Pic_1} alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src={Pic_2} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src={Pic_5} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} />
-      <img src={Pic_4} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
-      <img src={Pic_3} alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
-      <img src={Events_Dress_Code} alt='Image Loading...' style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }}/>
+      <img src={Pic_1} alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} loading='eager' />
+      <img src={Pic_2} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} loading='eager' />
+      <img src={Pic_5} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} loading='eager'/>
+      <img src={Pic_4} alt="Image loading..."  style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} loading='eager'/>
+      <img src={Pic_3} alt="Image loading..."   style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} loading='eager'/>
+      <img src={Events_Dress_Code} alt='Image Loading...' style={{ width: "clamp(180px, 70vw, 250px)", borderRadius: "10px" }} loading='eager'/>
       
       </div>
 
