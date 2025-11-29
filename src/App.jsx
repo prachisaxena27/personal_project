@@ -161,7 +161,7 @@ const handleRight = () => scrollToIndex(currentIndex + 1);
                      <br />
                      <br />
 
-                      We are getting married on December 2nd, 2025! 
+                     <b> We are getting married on December 2nd, 2025! </b>
 
                      <br />
                      <br />
