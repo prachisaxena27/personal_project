@@ -238,6 +238,7 @@ Weird, right? But something… <b>something </b> in that moment made me accept t
 
 I texted on the given number only to discover it wasn’t Aditya at all — it was his mom.
 And oh my God, she was so sweet! She immediately shared his number with me, and that’s how the first real line of our story was written:
+<br />
 <b>“Aditya, your mother has shared your number with me.”</b>
 
 <br />
